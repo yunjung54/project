@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <br><br>
+
+</head>
+<body>
+        <div class='pont'>
+                <div class="container">
+                        <div class="row">
+                     <div class="col-12">   
+                  
+                    <h1>수정하기</h1>
+            
+                    <div class='back'>
+                            <a href="{% url 'home' %}">GO MAIN PAGE</a>
+                            </div>
+                            <br>
+                            <div class='form'>
+                    <form action="{%url 'update' blog.id  %}">
+            
+            
+            
+                <h4>제목: 
+                <input type="text" name='title' placeholder="제목을 입력하세요">
+                </h4>
+                <h4>작성자: 
+                <input type="text" name="writer" placeholder="작성자를 입력하세요">
+            </h4>
+                <h4>글작성 : 
+                <br>
+                <textarea name="body" id="" cols="10" rows="50" placeholder="본문을 입력하세요"></textarea>
+                <br>
+                <input class="btn btn-dark" type="submit" value="제출하기">
+            </h4>
+            </form>
+            </div>
+            </div>
+            </div>
+            </div>
+</body>
+</html>
