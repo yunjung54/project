@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404 ,redirect
 from django.utils import timezone
 from .models import Blog
+from django.core.paginator import Paginator
+
 def blogalapp(request):
     return render(request, 'templates/home.html')
 # Create your views here.
@@ -41,4 +43,12 @@ def update(request, update_blog_id):
     update_blog.body = request.GET['body']
     update_blog.save()
     return redirect('/blog/'+str(update_blog.id))
+    
+def home(request):
+    blogs = Blog.objects
+    blog_list = Blog.objects.all()
+    paginator = Paginator(blog_list, 3)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page)
+    return render(request, 'home.html', {'blogs':blogs, 'posts':posts })
 
